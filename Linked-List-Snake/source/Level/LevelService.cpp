@@ -1,12 +1,10 @@
 #include "../../include/Level/LevelService.h"
-#include "../../include/Level/LevelController.h"
-#include "../../include/Level/LevelNumber.h"
 
 namespace Level
 {
 	LevelService::LevelService()
 	{
-		level_controller = nullptr;
+		createLevelController();
 	}
 
 	LevelService::~LevelService()

@@ -2,8 +2,8 @@
 
 namespace Level
 {
-	class LevelModel;
 	class LevelView;
+	class LevelModel;
 
 	class LevelController
 	{

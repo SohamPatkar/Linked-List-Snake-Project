@@ -1,5 +1,4 @@
-#pragma once
-#include <sfml/Graphics.hpp>
+#pragma 
 #include "../../include/UI/UIElement/RectangleShapeView.h"
 
 namespace Level

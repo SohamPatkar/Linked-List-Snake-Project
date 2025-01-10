@@ -1,15 +1,16 @@
 #pragma once
-#include "Level/LevelNumber.h"
+#include "Level/LevelService.h"
 
 namespace Level
 {
 	struct LevelData
 	{
-		LevelNumber level_number;
 		
 		LevelData(LevelNumber ind)
 		{
-			level_number = ind;
+			level_index = ind;
 		}
+
+		LevelNumber level_index;
 	};
 }

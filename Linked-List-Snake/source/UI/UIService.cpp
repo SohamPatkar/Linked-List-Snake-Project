@@ -28,9 +28,10 @@ namespace UI
 	{
 		splash_screen_controller = new SplashScreenUIController();
 		main_menu_controller = new MainMenuUIController();
+		level_selection_ui_controller = new LevelSelectionUIController();
 		instructions_screen_ui_controller = new InstructionsScreenUIController();
 		credits_screen_ui_controller = new CreditsScreenUIController();
-		level_selection_ui_controller = new LevelSelectionUIController();
+		
 	}
 
 	UIService::~UIService()

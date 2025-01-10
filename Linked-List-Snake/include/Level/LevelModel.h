@@ -1,6 +1,7 @@
 #pragma once
 #include "../../include/Level/LevelData.h"
 #include <vector>
+#include <SFML/System/Vector2.hpp>
 
 namespace Level
 {
@@ -19,8 +20,6 @@ namespace Level
 		~LevelModel();
 
 		void initialize(int width, int height);
-		void update();
-		void render();
 
 		float getCellWidth();
 		float getCellHeight();

@@ -1,10 +1,15 @@
 #pragma once
 #include "../Interface/IUIController.h"'
-#include "../UIElement/ImageView.h"
-#include "../UIElement/ButtonView.h"
+
 
 namespace UI
 {
+	namespace UIElement
+	{
+		class ImageView;
+		class ButtonView;
+	}
+
 	namespace LevelSelection
 	{
 		class LevelSelectionUIController : public Interface::IUIController
@@ -28,15 +33,15 @@ namespace UI
 			LevelSelectionUIController();
 			~LevelSelectionUIController();
 
-			void initialize();
-			void update();
-			void render();
+			void initialize()override;
+			void update()override;
+			void render()override;
 			void show() override;
 
-			void singleLinkedListButtonCallback();
-			void doubleLinkedListButtonCallback();
+			void levelOneButtonCallback();
+			void levelTwoButtonCallback();
 			void menuButtonCallback();
-			void registerCallback();
+			void registerButtonCallback();
 
 			void initializeButtons();
 			void initializeBackgroundImage();

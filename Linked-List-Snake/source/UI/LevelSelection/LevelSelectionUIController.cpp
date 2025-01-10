@@ -1,8 +1,12 @@
-#include "../../include/UI/LevelSelection/LevelSelectionUIController.h"
-#include "../../include/Global/ServiceLocator.h"
-#include "../../include/Global/Config.h"
-#include "../../include/Main/GameService.h"
-#include "../../include/Level/LevelNumber.h"
+#include "UI/LevelSelection/LevelSelectionUIController.h"
+#include "Main/GameService.h"
+#include "Graphics/GraphicService.h"
+#include "Sound/SoundService.h"
+#include "Event/EventService.h"
+#include "UI/UIElement/ButtonView.h"
+#include "UI/UIElement/ImageView.h"
+#include "Global/Config.h"
+#include "Level/LevelService.h"
 
 namespace UI
 {
@@ -28,24 +32,30 @@ namespace UI
 		{
 			initializeBackgroundImage();
 			initializeButtons();
-			registerCallback();
+			registerButtonCallback();
 		}
 
 		void LevelSelectionUIController::update()
 		{
-
+			background_image->update();
+			level_one_button->update();
+			level_two_button->update();
+			menu_button->update();
 		}
 
 		void LevelSelectionUIController::render()
 		{
-
+			background_image->render();
+			level_one_button->render();
+			level_two_button->render();
+			menu_button->render();
 		}
 
 		void LevelSelectionUIController::initializeButtons()
 		{
 			level_one_button->initialize("Level One", Global::Config::level_one_button_texture_path, button_width, button_height, sf::Vector2f(0, level_one_y_position));
 			level_two_button->initialize("Level Two", Global::Config::level_two_button_texture_path, button_width, button_height, sf::Vector2f(0, level_two_y_position));
-			menu_button->initialize("Menu", Global::Config::menu_button_texture_path, button_width, button_height, sf::Vector2f(0, level_one_y_position));
+			menu_button->initialize("Menu", Global::Config::menu_button_texture_path, button_width, button_height, sf::Vector2f(0, main_menu_y_position));
 
 			level_one_button->setCentreAlinged();
 			level_two_button->setCentreAlinged();
@@ -60,25 +70,25 @@ namespace UI
 			background_image->setImageAlpha(background_alpha);
 		}
 
-		void LevelSelectionUIController::registerCallback()
+		void LevelSelectionUIController::registerButtonCallback()
 		{
-			level_one_button->registerCallbackFuntion(std::bind(&singleLinkedListButtonCallback, this));
-			level_two_button->registerCallbackFuntion(std::bind(&doubleLinkedListButtonCallback, this));
-			menu_button->registerCallbackFuntion(std::bind(&menuButtonCallback, this));
+			level_one_button->registerCallbackFuntion(std::bind(&LevelSelectionUIController::levelOneButtonCallback, this));
+			level_two_button->registerCallbackFuntion(std::bind(&LevelSelectionUIController::levelTwoButtonCallback, this));
+			menu_button->registerCallbackFuntion(std::bind(&LevelSelectionUIController::menuButtonCallback, this));
 		}
 		
-		void LevelSelectionUIController::singleLinkedListButtonCallback()
+		void LevelSelectionUIController::levelOneButtonCallback()
 		{
 			Global::ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType::BUTTON_CLICK);
 			Main::GameService::setGameState(Main::GameState::GAMEPLAY);
-			Global::ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
+			
 		}
 
-		void LevelSelectionUIController::doubleLinkedListButtonCallback()
+		void LevelSelectionUIController::levelTwoButtonCallback()
 		{
 			Global::ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType::BUTTON_CLICK);
 			Main::GameService::setGameState(Main::GameState::GAMEPLAY);
-			Global::ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
+			
 		}
 
 		void LevelSelectionUIController::menuButtonCallback()
