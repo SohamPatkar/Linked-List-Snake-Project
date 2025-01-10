@@ -8,9 +8,12 @@ namespace Level
 	{
 	private:
 		const sf::Color background_color = sf::Color(180, 200, 160);
+		
 		UI::UIElement::RectangleShapeView* background_rectangle;
 		UI::UIElement::RectangleShapeView* border_rectangle;
+		
 		const sf::Color border_color = sf::Color::Black;
+		
 		float grid_width, grid_height;
 
 
