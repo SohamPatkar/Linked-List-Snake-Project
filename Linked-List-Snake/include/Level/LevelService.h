@@ -12,6 +12,7 @@ namespace Level
 
 		void destroy();
 		void createLevelController();
+		void spawnPlayer();
 
 	public:
 		LevelService();
