@@ -35,7 +35,7 @@ namespace Player
 
 	void PlayerService::spawnPlayer()
 	{
-
+		snake_controller->spawnSnake();
 	}
 
 	void PlayerService::destroy()
