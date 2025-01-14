@@ -79,11 +79,6 @@ namespace Player
 
 	}
 	
-	void SnakeController::handleRestart()
-	{
-
-	}
-
 	void SnakeController::updateSnakeDirection()
 	{
 
