@@ -15,6 +15,13 @@ namespace LinkedList
 		return new Node();
 	}
 
+	void SingleLinkedList::createHeadNode()
+	{
+		head_node = createNode();
+		head_node->body_part.initialize(node_width,node_height,default_position,default_direction);
+		return;
+	}
+
 	void SingleLinkedList::initialize(float width, float height, sf::Vector2i position, Player::Direction direction)
 	{
 		node_width = width;
@@ -25,6 +32,6 @@ namespace LinkedList
 
 	void SingleLinkedList::render()
 	{
-
+		head_node->body_part.render();
 	}
 }

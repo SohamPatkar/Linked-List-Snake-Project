@@ -47,4 +47,14 @@ namespace Level
 	{
 		delete(level_controller);
 	}
+
+	float LevelService::getCellHeight()
+	{
+		return level_controller->getCellHeight();
+	}
+
+	float LevelService::getCellWidth()
+	{
+		return level_controller->getCellWidth();
+	}
 }

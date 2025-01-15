@@ -133,14 +133,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\LinkedList\SingleLinkedList.h" />
     <ClInclude Include="include\Player\BodyPart.h" />
-    <ClInclude Include="include\Player\Node.h" />
+    <ClInclude Include="include\LinkedList\Node.h" />
     <ClInclude Include="include\Player\PlayerService.h" />
     <ClInclude Include="include\Player\SnakeController.h" />
     <ClInclude Include="include\UI\LevelSelection\LevelSelectionUIController.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
     <ClCompile Include="source\Player\SnakeController.cpp" />

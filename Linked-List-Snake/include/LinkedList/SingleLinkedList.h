@@ -16,10 +16,14 @@ namespace LinkedList
 		Player::Direction default_direction;
 
 		Node* createNode();
+		
 
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
+
+		void createHeadNode();
+
 		void initialize(float width, float height, sf::Vector2i position, Player::Direction direction);
 		void render();
 	};
