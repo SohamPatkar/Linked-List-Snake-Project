@@ -43,10 +43,11 @@ namespace Player
 	}
 
 	void SnakeController::update()
-	{
+	{	
 		switch (current_snake_state)
 		{
 		case SnakeState::ALIVE:
+			delayedUpdate();
 			processPlayerInput();
 			updateSnakeDirection();
 			processSnakeCollision();
@@ -62,6 +63,19 @@ namespace Player
 	void SnakeController::render()
 	{
 		single_linked_list->render();
+	}
+
+	void SnakeController::delayedUpdate()
+	{
+		elapsed_duration += Global::ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
+
+		if (elapsed_duration >= movement_frame_duration)
+		{
+			elapsed_duration = 0.f;
+			updateSnakeDirection();
+			processSnakeCollision();
+			moveSnake();
+		}
 	}
 
 	void SnakeController::createLinkedList()
