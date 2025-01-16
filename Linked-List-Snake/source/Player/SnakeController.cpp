@@ -47,11 +47,8 @@ namespace Player
 		switch (current_snake_state)
 		{
 		case SnakeState::ALIVE:
-			delayedUpdate();
 			processPlayerInput();
-			updateSnakeDirection();
-			processSnakeCollision();
-			moveSnake();
+			delayedUpdate();
 			break;
 
 		case SnakeState::DEAD:
