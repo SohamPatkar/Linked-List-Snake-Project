@@ -67,8 +67,8 @@ namespace Global
 
 		if (Main::GameService::getGameState() == Main::GameState::GAMEPLAY)
 		{
-			player_service->render();
 			level_service->render();	
+			player_service->render();
 		}
 	}
 
