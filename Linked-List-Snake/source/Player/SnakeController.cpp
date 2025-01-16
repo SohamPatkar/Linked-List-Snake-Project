@@ -8,17 +8,19 @@ namespace Player
 		single_linked_list = nullptr;
 
 		createLinkedList();
-		/*spawnSnake();*/
 	}
 
 	SnakeController::~SnakeController()
 	{
-
+		destroy();
 	}
 
 	void SnakeController::spawnSnake()
 	{
-		single_linked_list->createHeadNode();
+		for (int i = 0; i < initial_snake_length; i++) 
+		{
+			single_linked_list->insertNodeAtTail();     
+		}
 	}
 
 	void SnakeController::setSnakeState(SnakeState state)
@@ -66,6 +68,11 @@ namespace Player
 		single_linked_list = new LinkedList::SingleLinkedList();
 	}
 
+	void SnakeController::destroy()
+	{
+		delete (single_linked_list);
+	}
+
 	void SnakeController::moveSnake()
 	{
 
@@ -83,7 +90,7 @@ namespace Player
 
 	void SnakeController::handleRestart()
 	{
-
+		respawnSnake();
 	}
 
 	void SnakeController::reset()
@@ -98,6 +105,6 @@ namespace Player
 
 	void SnakeController::respawnSnake()
 	{
-
+		spawnSnake();
 	}
 }

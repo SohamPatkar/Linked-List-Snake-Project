@@ -23,6 +23,7 @@ namespace Player
 		Direction current_snake_direction;
 
 		void createLinkedList();
+		void destroy();
 
 	public:
 		SnakeController();
@@ -43,6 +44,5 @@ namespace Player
 		void setSnakeState(SnakeState state);
 
 		SnakeState getSnakeState();
-
 	};
 }

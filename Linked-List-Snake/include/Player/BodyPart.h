@@ -1,11 +1,10 @@
 #pragma once
-#include "../../include/UI/UIElement/ImageView.h"
-#include <Graphics/GraphicService.h>
+#include "UI/UIElement/ImageView.h"
+#include "Direction.h"
+#include <SFML/Graphics.hpp>
 
 namespace Player
 {
-	enum class Direction;
-
 	class BodyPart
 	{
 	private:
@@ -25,7 +24,7 @@ namespace Player
 		sf::Vector2i getNextPositionDown();
 		sf::Vector2i getNextPositionUp();
 		sf::Vector2i getNextPosition();
-		void updatePosition();
+
 		void destroy();
 
 	public:
@@ -33,11 +32,11 @@ namespace Player
 		~BodyPart();
 
 		void initialize(float width, float height, sf::Vector2i pos, Direction dir);
-		void update();
+		void updatePosition();
 		void render();
 
 		Direction getDirection();
-		sf::Vector2i getGridPosition();
+		sf::Vector2i getPosition();
 
 		void setBodyPartDirection(Direction direction);
 		void setPosition(sf::Vector2i position);

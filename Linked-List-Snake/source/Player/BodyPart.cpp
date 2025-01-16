@@ -1,13 +1,13 @@
 #include "../../include/Player/BodyPart.h"
 #include "../../include/Global/Config.h"
 #include "../../include/Level/LevelView.h"
-#include "../../include/Player/Direction.h"
 
 namespace Player
 {
 	BodyPart::BodyPart()
 	{
 		grid_position = sf::Vector2i(0, 0);
+		bodypart_image = nullptr;
 
 		createBodyPartImage();
 	}
@@ -25,11 +25,6 @@ namespace Player
 		direction = dir;
 
 		initializeBodyPartImage();
-	}
-
-	void BodyPart::update()
-	{
-
 	}
 
 	void BodyPart::render()
@@ -78,6 +73,8 @@ namespace Player
 
 	void BodyPart::updatePosition()
 	{
+		grid_position = getNextPosition();
+
 		bodypart_image->setPosition(getBodyPartScreenPosition());
 		bodypart_image->setRotation(getRotationAngle());
 		bodypart_image->update();
@@ -125,7 +122,7 @@ namespace Player
 		return sf::Vector2i(grid_position.x + 1, grid_position.y);
 	}
 
-	sf::Vector2i BodyPart::getGridPosition()
+	sf::Vector2i BodyPart::getPosition()
 	{
 		return grid_position;
 	}
