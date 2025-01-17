@@ -1,6 +1,7 @@
 #pragma once
 #include "Level/LevelService.h"
 #include "Element/ElementData.h"
+#include <vector>
 
 namespace Level
 {
@@ -8,10 +9,11 @@ namespace Level
 	{
 		LevelData(LevelNumber ind, std::vector<Element::ElementData>* data_list)
 		{
-			element_data_list = data_list;
 			level_index = ind;
+			element_data_list = data_list;
 		}
-		std::vector<Element::ElementData>* element_data_list;
+		
 		LevelNumber level_index;
+		std::vector<Element::ElementData>* element_data_list;
 	};
 }

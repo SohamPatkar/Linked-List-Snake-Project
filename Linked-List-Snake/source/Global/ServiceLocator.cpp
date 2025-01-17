@@ -42,6 +42,7 @@ namespace Global
 		graphic_service->initialize();
 		sound_service->initialize();
 		event_service->initialize();
+		element_service->initialize();
 		ui_service->initialize();
 		time_service->initialize();
 		level_service->initialize();

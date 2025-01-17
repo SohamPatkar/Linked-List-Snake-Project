@@ -7,7 +7,10 @@ namespace Element
 	using namespace Global;
 	using namespace Level;
 
-	Obstacle::Obstacle(){}
+	Obstacle::Obstacle()
+	{
+		obstacle_image = new UI::UIElement::ImageView();
+	}
 
 	Obstacle::~Obstacle(){}
 
@@ -16,6 +19,8 @@ namespace Element
 		grid_position = grid_pos;
 		cell_width = width;
 		cell_height = height;
+
+		initializeObstacleImage();
 	}
 
 	void Obstacle::update()
