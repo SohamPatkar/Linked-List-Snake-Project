@@ -25,6 +25,8 @@ namespace LinkedList
 		void updateNodeDirection(Player::Direction dir_to_set);
 		void insertNodeAtTail();
 		bool processNodeCollision();
+		void removeNodeAtHead();
+		void removeAllNodes();
 
 		void initialize(float width, float height, sf::Vector2i position, Player::Direction direction);
 		void render();
