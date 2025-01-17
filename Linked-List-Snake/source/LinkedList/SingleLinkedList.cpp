@@ -146,4 +146,6 @@ namespace LinkedList
 		cur_node->next = nullptr;
 		delete (cur_node);
 	}
+
+
 }

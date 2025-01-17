@@ -22,6 +22,8 @@ namespace Player
 		const Direction default_direction = Direction::LEFT;
 		const float movement_frame_duration = 0.1f;
 		float elapsed_duration = 0.f;
+		const float restart_duration = 2.f;
+		float restart_counter = 0.f;
 		Direction current_snake_direction;
 
 		void createLinkedList();
