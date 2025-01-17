@@ -5,6 +5,12 @@
 
 namespace Player
 {
+	enum class InputState
+	{
+		WAITING,
+		PROCESSING
+	};
+
 	enum class SnakeState
 	{
 		ALIVE,
@@ -24,6 +30,7 @@ namespace Player
 		float elapsed_duration = 0.f;
 		const float restart_duration = 2.f;
 		float restart_counter = 0.f;
+		InputState current_input_state;
 		Direction current_snake_direction;
 
 		void createLinkedList();
