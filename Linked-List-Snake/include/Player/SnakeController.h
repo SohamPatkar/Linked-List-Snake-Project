@@ -53,6 +53,7 @@ namespace Player
 		void processBodyCollisions();
 		void processElementCollisions();
 		void processFoodCollision();
+		void OnFoodCollected(FoodType food_type);
 		void handleRestart();
 		void reset();
 		void respawnSnake();

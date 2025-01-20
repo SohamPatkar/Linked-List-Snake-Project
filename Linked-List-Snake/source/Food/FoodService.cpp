@@ -2,6 +2,7 @@
 #include "../../include/Level/LevelModel.h"
 #include "../../include/Global/ServiceLocator.h"
 
+
 namespace Food
 {
 	using namespace Global;
@@ -137,6 +138,17 @@ namespace Food
 		{
 			delete(current_food_item);
 		}
+	}
+
+	bool FoodService::processFoodCollisions(LinkedList::Node* head_node, FoodType& out_food_type)
+	{
+		if (current_food_item && current_food_item->getFoodPosition() == head_node->body_part.getPosition())
+		{
+			out_food_type = current_food_item->getFoodType();
+			return true;
+		}
+
+		return false;
 	}
 
 }
