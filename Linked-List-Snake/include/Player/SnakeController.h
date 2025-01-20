@@ -50,6 +50,9 @@ namespace Player
 		void updateSnakeDirection();
 		void moveSnake();
 		void processSnakeCollision();
+		void processBodyCollisions();
+		void processElementCollisions();
+		void processFoodCollision();
 		void handleRestart();
 		void reset();
 		void respawnSnake();
