@@ -43,6 +43,7 @@ namespace Global
 		sound_service->initialize();
 		event_service->initialize();
 		element_service->initialize();
+		food_service->initialize();
 		ui_service->initialize();
 		time_service->initialize();
 		level_service->initialize();
@@ -60,6 +61,7 @@ namespace Global
 		{
 			level_service->update();
 			element_service->update();
+			food_service->update();
 			player_service->update();
 		}
 	}
@@ -73,6 +75,7 @@ namespace Global
 		{
 			level_service->render();	
 			element_service->render();
+			food_service->render();
 			player_service->render();
 		}
 	}
@@ -84,6 +87,7 @@ namespace Global
 		delete(sound_service);
 		delete(event_service);
 		delete(time_service);
+		delete(food_service);
 		delete(level_service);
 		delete(player_service);
 		delete(element_service);
@@ -110,6 +114,8 @@ namespace Global
 	Player::PlayerService* ServiceLocator::getPlayerService() { return player_service; }
 
 	Element::ElementService* ServiceLocator::getElementService() { return element_service; }
+
+	Food::FoodService* ServiceLocator::getFoodService() { return food_service; }
 
 	void ServiceLocator::deleteServiceLocator() { delete(this); }
 }
