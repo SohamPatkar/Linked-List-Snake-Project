@@ -19,6 +19,7 @@ namespace Global
 		level_service = nullptr;
 		player_service = nullptr;
 		element_service = nullptr;
+		food_service = nullptr;
 
 		createServices();
 	}
@@ -35,6 +36,7 @@ namespace Global
 		level_service = new Level::LevelService();
 		element_service = new Element::ElementService();
 		player_service = new Player::PlayerService();
+		food_service = new Food::FoodService();
 	}
 
 	void ServiceLocator::initialize()
@@ -43,11 +45,11 @@ namespace Global
 		sound_service->initialize();
 		event_service->initialize();
 		element_service->initialize();
-		food_service->initialize();
 		ui_service->initialize();
 		time_service->initialize();
 		level_service->initialize();
 		player_service->initialize();
+		food_service->initialize();
 	}
 
 	void ServiceLocator::update()
