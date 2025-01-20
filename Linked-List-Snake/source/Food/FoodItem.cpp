@@ -91,11 +91,11 @@ namespace Food
 
 	void FoodItem::update()
 	{
-
+		food_image->update();
 	}
 
 	void FoodItem::render()
 	{
-
+		food_image->render();
 	}
 }

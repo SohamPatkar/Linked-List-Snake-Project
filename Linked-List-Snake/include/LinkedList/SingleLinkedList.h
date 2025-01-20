@@ -1,6 +1,7 @@
 #pragma once
 #include <Graphics/GraphicService.h>
 #include "../include/Player/Direction.h"
+#include <vector>
 
 namespace LinkedList
 {
@@ -21,6 +22,7 @@ namespace LinkedList
 		~SingleLinkedList();
 
 		sf::Vector2i getNewNodePosition(Node* reference_node);
+		std::vector<sf::Vector2i> getNodesPosition();
 		void updateNodePosition();
 		void updateNodeDirection(Player::Direction dir_to_set);
 		void insertNodeAtTail();
