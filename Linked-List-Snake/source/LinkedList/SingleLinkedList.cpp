@@ -133,6 +133,29 @@ namespace LinkedList
 		}		
 	}
 
+	void SingleLinkedList::removeNodeAtTail()
+	{
+		if (head_node == nullptr) return;
+
+		Node* cur_node = head_node;
+
+		if (cur_node->next == nullptr)
+		{
+			removeNodeAtHead();
+			return;
+		}
+
+		while (cur_node->next->next != nullptr)
+		{
+			cur_node = cur_node->next;
+		}
+
+		delete (cur_node->next);
+		linked_list_size--;
+		cur_node->next = nullptr;
+
+	}
+
 	void SingleLinkedList::shiftNodesAfterRemoval(Node* cur_node)
 	{
 		sf::Vector2i previous_node_position = cur_node->body_part.getPosition();
