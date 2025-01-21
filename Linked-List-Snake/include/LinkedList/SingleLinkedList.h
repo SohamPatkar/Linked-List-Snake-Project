@@ -23,6 +23,8 @@ namespace LinkedList
 		sf::Vector2i default_position;
 		Player::Direction default_direction;
 
+		int linked_list_size;
+
 		Node* createNode();
 	public:
 		SingleLinkedList();
@@ -34,6 +36,7 @@ namespace LinkedList
 		void updateNodePosition();
 		void updateNodeDirection(Player::Direction dir_to_set);
 		void insertNodeAtTail();
+		void insertNodeAtHead();
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();

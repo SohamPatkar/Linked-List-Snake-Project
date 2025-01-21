@@ -24,6 +24,8 @@ namespace LinkedList
 		node_height = height;
 		default_position = position;
 		default_direction = direction;
+
+		linked_list_size = 0;
 	}
 
 	sf::Vector2i SingleLinkedList::getNewNodePosition(Node* reference_node, Operation operation)
@@ -167,5 +169,22 @@ namespace LinkedList
 		sf::Vector2i position = getNewNodePosition(reference_node, operation);
 
 		new_node->body_part.initialize(node_width, node_height, position, reference_node->body_part.getDirection());
+	}
+
+	void SingleLinkedList::insertNodeAtHead()
+	{
+		linked_list_size++;
+		Node* new_node = createNode();
+
+		if (head_node == nullptr)
+		{
+			head_node = new_node;
+			initializeNode(new_node, nullptr, Operation::HEAD);
+			return;
+		}
+
+		initializeNode(new_node, head_node, Operation::HEAD);
+		new_node->next = head_node;
+		head_node = new_node;
 	}
 }
