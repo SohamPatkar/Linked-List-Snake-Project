@@ -111,7 +111,6 @@ namespace LinkedList
 		if (index == 0)
 		{
 			insertNodeAtHead();
-			return;
 		}
 		else
 		{
