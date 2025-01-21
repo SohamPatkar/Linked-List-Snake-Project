@@ -5,6 +5,13 @@
 
 namespace LinkedList
 {
+	enum class Operation
+	{
+		HEAD,
+		MID,
+		TAIL
+	};
+
 	struct Node;
 
 	class SingleLinkedList
@@ -21,7 +28,8 @@ namespace LinkedList
 		SingleLinkedList();
 		~SingleLinkedList();
 
-		sf::Vector2i getNewNodePosition(Node* reference_node);
+		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
+		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
 		std::vector<sf::Vector2i> getNodesPosition();
 		void updateNodePosition();
 		void updateNodeDirection(Player::Direction dir_to_set);
