@@ -40,6 +40,9 @@ namespace LinkedList
 		void insertNodeAtTail();
 		void insertNodeAtHead();
 		void insertNodeAtMiddle();
+		void removeNodeAtMiddle();
+		void removeNodeAtIndex(int index);
+		void shiftNodesAfterRemoval(Node* node);
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void insertNodeAtIndex(int index);
 		bool processNodeCollision();

@@ -2,9 +2,12 @@
 #include <Graphics/GraphicService.h>
 #include "./Player/Direction.h"
 #include "../LinkedList/SingleLinkedList.h"
+#include "../../include/Food/FoodType.h"
 
 namespace Player
 {
+	using namespace Food;
+
 	enum class InputState
 	{
 		WAITING,

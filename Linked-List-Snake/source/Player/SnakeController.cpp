@@ -3,7 +3,7 @@
 #include "../../include/Event/EventService.h"
 #include "../../include/Element/ElementService.h"
 #include "../../include/Food/FoodService.h"
-#include "../../include/Food/FoodType.h"
+
 
 namespace Player
 {
