@@ -26,6 +26,8 @@ namespace LinkedList
 		int linked_list_size;
 
 		Node* createNode();
+		int findMiddleNode();
+
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
@@ -37,6 +39,7 @@ namespace LinkedList
 		void updateNodeDirection(Player::Direction dir_to_set);
 		void insertNodeAtTail();
 		void insertNodeAtHead();
+		void insertNodeAtMiddle();
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void insertNodeAtIndex(int index);
 		bool processNodeCollision();
