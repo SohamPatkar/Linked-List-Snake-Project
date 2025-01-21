@@ -37,6 +37,8 @@ namespace LinkedList
 		void updateNodeDirection(Player::Direction dir_to_set);
 		void insertNodeAtTail();
 		void insertNodeAtHead();
+		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
+		void insertNodeAtIndex(int index);
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
