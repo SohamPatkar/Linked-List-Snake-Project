@@ -46,6 +46,8 @@ namespace LinkedList
 		void shiftNodesAfterRemoval(Node* node);
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void insertNodeAtIndex(int index);
+		void removeHalfNodes();
+		Node* findNodeAtIndex(int index);
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
