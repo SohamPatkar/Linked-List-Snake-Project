@@ -143,6 +143,7 @@
     <ClInclude Include="include\LinkedList\Node.h" />
     <ClInclude Include="include\Player\PlayerService.h" />
     <ClInclude Include="include\Player\SnakeController.h" />
+    <ClInclude Include="include\UI\Gameplay\GameplayUIController.h" />
     <ClInclude Include="include\UI\LevelSelection\LevelSelectionUIController.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -157,6 +158,7 @@
     <ClCompile Include="source\Player\SnakeController.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
     <ClCompile Include="source\UI\Credits\CreditsScreenUIController.cpp" />
+    <ClCompile Include="source\UI\Gameplay\GameplayUIController.cpp" />
     <ClCompile Include="source\UI\Instructions\InstructionsScreenUIController.cpp" />
     <ClCompile Include="source\UI\LevelSelection\LevelSelectionUIController.cpp" />
     <ClCompile Include="source\UI\UIElement\AnimatedImageView.cpp" />

@@ -171,6 +171,7 @@ namespace Player
 
 			food_service->destroyFood();
 			OnFoodCollected(food_type);
+			player_score++;
 		}
 	}
 
@@ -180,34 +181,50 @@ namespace Player
 		{
 		case FoodType::PIZZA:
 			single_linked_list->insertNodeAtTail();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::INSERT_AT_TAIL;
 			break;
 
 		case FoodType::BURGER:
 			single_linked_list->insertNodeAtHead();
+			time_complexity = TimeComplexity::ONE;
+			last_linked_list_operation = LinkedListOperations::INSERT_AT_HEAD;
 			break;
 
 		case FoodType::CHEESE:
 			single_linked_list->insertNodeAtMiddle();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::INSERT_AT_MID;
 			break;
 
 		case FoodType::APPLE:
 			single_linked_list->insertNodeAtHead();
+			time_complexity = TimeComplexity::ONE;
+			last_linked_list_operation = LinkedListOperations::REMOVE_AT_HEAD;
 			break;
 
 		case FoodType::MANGO:
 			single_linked_list->insertNodeAtMiddle();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::REMOVE_AT_MID;
 			break;
 
 		case FoodType::ORANGE:
 			single_linked_list->insertNodeAtTail();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::REMOVE_AT_TAIL;
 			break;
 
 		case FoodType::POISION:
 			single_linked_list->removeHalfNodes();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::DELETE_HALF_LIST;
 			break;
 
 		case FoodType::ALCOHOL:
 			current_snake_direction = single_linked_list->reverse();
+			time_complexity = TimeComplexity::N;
+			last_linked_list_operation = LinkedListOperations::REVERSE_LIST;
 			break;
 		}
 	}
@@ -228,6 +245,7 @@ namespace Player
 		current_snake_direction = default_direction;
 		elapsed_duration = 0.f;
 		restart_counter = 0.f;
+		player_score = 0;
 		current_input_state = InputState::WAITING;
 	}
 	
@@ -241,6 +259,21 @@ namespace Player
 		single_linked_list->removeAllNodes();
 		reset();
 		spawnSnake();
+	}
+
+	int SnakeController::getPlayerScore()
+	{
+		return player_score;
+	}
+
+	LinkedListOperations SnakeController::getLinkedListOperation()
+	{
+		return last_linked_list_operation;
+	}
+
+	TimeComplexity SnakeController::getTimeComplexity()
+	{
+		return time_complexity;
 	}
 
 	std::vector<sf::Vector2i> SnakeController::getCurrentSnakePositionList()
