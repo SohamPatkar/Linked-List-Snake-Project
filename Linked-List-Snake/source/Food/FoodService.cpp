@@ -140,6 +140,7 @@ namespace Food
 		{
 			delete(current_food_item);
 		}
+		current_food_item = nullptr;
 	}
 
 	bool FoodService::processFoodCollisions(LinkedList::Node* head_node, FoodType& out_food_type)
