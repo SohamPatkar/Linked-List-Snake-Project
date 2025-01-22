@@ -1,5 +1,7 @@
 #include "../../include/Food/FoodService.h"
 #include "../../include/Level/LevelModel.h"
+#include "../../include/Food/FoodType.h"
+#include "../../include/Food/FoodItem.h"
 #include "../../include/Global/ServiceLocator.h"
 
 

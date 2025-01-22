@@ -11,6 +11,7 @@ namespace Player
 		UI::UIElement::ImageView* bodypart_image;
 		sf::Vector2i grid_position;
 		Direction direction;
+		Direction previous_direction;
 
 		float bodypart_width;
 		float bodypart_height;
@@ -38,6 +39,7 @@ namespace Player
 		sf::Vector2i getNextPosition();
 		sf::Vector2i getPrevPosition();
 		Direction getDirection();
+		Direction getPreviousDirection();
 		sf::Vector2i getPosition();
 
 		void setBodyPartDirection(Direction direction);

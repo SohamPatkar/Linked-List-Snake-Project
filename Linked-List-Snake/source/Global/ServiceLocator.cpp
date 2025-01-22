@@ -63,8 +63,8 @@ namespace Global
 		{
 			level_service->update();
 			element_service->update();
-			food_service->update();
 			player_service->update();
+			food_service->update();
 		}
 	}
 
@@ -77,8 +77,8 @@ namespace Global
 		{
 			level_service->render();	
 			element_service->render();
-			food_service->render();
 			player_service->render();
+			food_service->render();
 		}
 	}
 
@@ -89,10 +89,10 @@ namespace Global
 		delete(sound_service);
 		delete(event_service);
 		delete(time_service);
-		delete(food_service);
 		delete(level_service);
 		delete(player_service);
 		delete(element_service);
+		delete(food_service);
 	}
 
 	ServiceLocator* ServiceLocator::getInstance()

@@ -1,8 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <random>
-#include "../../include/Food/FoodType.h"
-#include "../../include/Food/FoodItem.h"
 #include "../../include/LinkedList/Node.h"
 
 namespace Food
@@ -12,6 +10,9 @@ namespace Food
 		ACTIVE,
 		IN_ACTIVE,
 	};
+
+	class FoodItem;
+	enum class FoodType;
 
 	class FoodService
 	{

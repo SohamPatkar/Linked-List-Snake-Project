@@ -12,6 +12,8 @@ namespace LinkedList
 		TAIL
 	};
 
+	using namespace Player;
+
 	struct Node;
 
 	class SingleLinkedList
@@ -47,10 +49,14 @@ namespace LinkedList
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void insertNodeAtIndex(int index);
 		void removeHalfNodes();
+		void reverseNodeDirections();
+		Direction reverse();
 		Node* findNodeAtIndex(int index);
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
+
+		Direction getReverseDirection(Direction reference_direction);
 
 		Node* getHeadNode();
 		void initialize(float width, float height, sf::Vector2i position, Player::Direction direction);
