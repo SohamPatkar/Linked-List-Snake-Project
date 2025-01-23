@@ -1,7 +1,7 @@
 #pragma once
 #include <Graphics/GraphicService.h>
 #include "./Player/Direction.h"
-#include "../LinkedList/SingleLinkedList.h"
+#include "../LinkedList/SingleLinked/SingleLinkedList.h"
 #include "../../include/Food/FoodType.h"
 
 namespace Player
