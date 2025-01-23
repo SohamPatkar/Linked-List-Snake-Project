@@ -1,5 +1,5 @@
-#include "../../include/LinkedList/SingleLinkedList.h"
-#include "../../include/LinkedList/Node.h"
+#include "../../../include/LinkedList/SingleLinked/SingleLinkedList.h"
+#include "../../../include/LinkedList/SingleLinked/Node.h"
 
 
 namespace LinkedList
