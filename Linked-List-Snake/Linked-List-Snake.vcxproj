@@ -138,9 +138,13 @@
     <ClInclude Include="include\Element\Obstacle.h" />
     <ClInclude Include="include\Food\FoodService.h" />
     <ClInclude Include="include\Food\FoodType.h" />
-    <ClInclude Include="include\LinkedList\SingleLinkedList.h" />
-    <ClInclude Include="include\Player\BodyPart.h" />
+    <ClInclude Include="include\LinkedList\DoubleLinked\DoubleNode.h" />
+    <ClInclude Include="include\LinkedList\DoubleLinked\DoublyLinkedList.h" />
+    <ClInclude Include="include\LinkedList\LinkedList.h" />
     <ClInclude Include="include\LinkedList\Node.h" />
+    <ClInclude Include="include\LinkedList\SingleLinked\SingleLinkedList.h" />
+    <ClInclude Include="include\Player\BodyPart.h" />
+    <ClInclude Include="include\LinkedList\SingleLinked\SingleNode.h" />
     <ClInclude Include="include\Player\PlayerService.h" />
     <ClInclude Include="include\Player\SnakeController.h" />
     <ClInclude Include="include\UI\Gameplay\GameplayUIController.h" />
@@ -152,7 +156,9 @@
     <ClCompile Include="source\Element\Obstacle.cpp" />
     <ClCompile Include="source\Food\FoodItem.cpp" />
     <ClCompile Include="source\Food\FoodService.cpp" />
-    <ClCompile Include="source\LinkedList\SingleLinkedList.cpp" />
+    <ClCompile Include="source\LinkedList\DoubleLinked\DoubleLinkedList.cpp" />
+    <ClCompile Include="source\LinkedList\LinkedList.cpp" />
+    <ClCompile Include="source\LinkedList\SingleLinked\SingleLinkedList.cpp" />
     <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
     <ClCompile Include="source\Player\SnakeController.cpp" />

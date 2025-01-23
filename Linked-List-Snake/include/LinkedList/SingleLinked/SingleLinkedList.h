@@ -40,7 +40,7 @@ namespace LinkedList
 			void shiftNodesAfterRemoval(Node* cur_node);
 
 			Direction reverse() override;
-			void reverseNodeDirections();
+			/*void reverseNodeDirections();*/
 		};
 	}	
 }
