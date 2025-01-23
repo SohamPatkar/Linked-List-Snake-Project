@@ -89,7 +89,7 @@ namespace Player
 
 	void SnakeController::createLinkedList()
 	{
-		single_linked_list = new LinkedList::SingleLinkedList();
+		single_linked_list = new LinkedList::SingleLinked::SingleLinkedList();
 	}
 
 	void SnakeController::destroy()
@@ -278,6 +278,6 @@ namespace Player
 
 	std::vector<sf::Vector2i> SnakeController::getCurrentSnakePositionList()
 	{
-		return single_linked_list->getNodesPosition();
+		return single_linked_list->getNodesPositionList();
 	}
 }
