@@ -2,7 +2,9 @@
 #include <Graphics/GraphicService.h>
 #include "./Player/Direction.h"
 #include "../LinkedList/SingleLinked/SingleLinkedList.h"
+#include "LinkedList/DoubleLinked/DoublyLinkedList.h"
 #include "../../include/Food/FoodType.h"
+#include "Level/LevelConfig.h"
 
 namespace Player
 {
@@ -45,7 +47,7 @@ namespace Player
 	private:
 		const int initial_snake_length = 10;
 		SnakeState current_snake_state;
-		LinkedList::SingleLinked::SingleLinkedList* single_linked_list;
+		LinkedList::LinkedList* linked_list;
 
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::LEFT;
@@ -60,7 +62,7 @@ namespace Player
 
 		int player_score;
 
-		void createLinkedList();
+		
 		void delayedUpdate();
 		void destroy();
 
@@ -85,6 +87,8 @@ namespace Player
 		void reset();
 		void respawnSnake();
 		void setSnakeState(SnakeState state);
+		void initializeLinkedList();
+		void createLinkedList(Level::LinkedListType level_type);
 
 		LinkedListOperations getLinkedListOperation();
 		TimeComplexity getTimeComplexity();
