@@ -1,33 +1,35 @@
 #pragma once
-#include "../../include/Level/LevelNumber.h"
+#include "../../include/Level/LevelConfig.h"
 #include "../../include/Level/LevelController.h"
 
 namespace Level
 {
 	class LevelService
 	{
-	private:
-		LevelController* level_controller;
-		LevelNumber current_level;
+        LevelController* level_controller;
+        LevelNumber current_level;
+        LinkedListType current_linked_list_type;
 
-		void destroy();
-		void createLevelController();
-		void spawnPlayer();
-		void spawnLevelElements(LevelNumber level_to_load);
-		
-	public:
-		LevelService();
-		~LevelService();
+        void createLevelController();
+        void spawnPlayer();
+        void spawnLevelElements(LevelNumber level_to_load);
+        void spawnFood();
+        void destroy();
 
-		void createLevel(LevelNumber level_to_load);
-		void initialize();
-		void update();
-		void render();
+    public:
+        LevelService();
+        ~LevelService();
 
-		void spawnFood();
+        void initialize();
+        void update();
+        void render();
 
-		LevelNumber getCurrentLevel();
-		float getCellWidth();
-		float getCellHeight();
+        void createLevel(LinkedListType linked_list_type);
+        void setCurrentLevelNumber(LevelNumber level_to_load);
+
+        float getCellWidth();
+        float getCellHeight();
+        LevelNumber getCurrentLevel();
+        LinkedListType getCurrentLinkedListType();
 	};
 }
