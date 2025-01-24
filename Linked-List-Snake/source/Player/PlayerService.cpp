@@ -39,6 +39,11 @@ namespace Player
 		snake_controller->spawnSnake();
 	}
 
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
+	}
+
 	void PlayerService::destroy()
 	{
 		delete(snake_controller);

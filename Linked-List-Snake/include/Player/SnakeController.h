@@ -89,6 +89,7 @@ namespace Player
 		void setSnakeState(SnakeState state);
 		void initializeLinkedList();
 		void createLinkedList(Level::LinkedListType level_type);
+		bool isSnakeDead();
 
 		LinkedListOperations getLinkedListOperation();
 		TimeComplexity getTimeComplexity();
