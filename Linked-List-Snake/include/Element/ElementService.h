@@ -23,6 +23,7 @@ namespace Element
 		void update();
 		void render();
 
+		std::vector<sf::Vector2i> getElementPositionList();
 		const void spawnElements(std::vector<ElementData>& element_data_list, float cell_width, float cell_height);
 	};
 }
