@@ -79,6 +79,11 @@ namespace Food
 		return food_type;
 	}
 
+	sf::Vector2i FoodItem::getFoodPosition()
+	{
+		return grid_position;
+	}
+
 	void FoodItem::initialize(sf::Vector2i grid_pos, float width, float height, FoodType type)
 	{
 		grid_position = grid_pos;

@@ -1,8 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <random>
-#include "../../include/Food/FoodType.h"
-#include "../../include/Food/FoodItem.h"
+#include "../../include/LinkedList/Node.h"
 
 namespace Food
 {
@@ -11,6 +10,9 @@ namespace Food
 		ACTIVE,
 		IN_ACTIVE,
 	};
+
+	class FoodItem;
+	enum class FoodType;
 
 	class FoodService
 	{
@@ -27,7 +29,7 @@ namespace Food
 		const float spawn_duration = 4.f;
 		float elapsed_duration;
 
-		void destroyFood();
+		
 		void handleFoodSpawning();
 		void updateElapsedDuration();
 
@@ -39,7 +41,9 @@ namespace Food
 		void update();
 		void render();
 		void reset();
-
+		
+		void destroyFood();
+		bool processFoodCollisions(LinkedList::Node* head_node, FoodType& out_food_type);
 		void startFoodSpawning();
 		void stopFoodSpawning();
 		void spawnFood();

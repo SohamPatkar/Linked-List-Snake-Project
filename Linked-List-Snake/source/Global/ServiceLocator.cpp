@@ -56,30 +56,35 @@ namespace Global
 	{
 		graphic_service->update();
 		event_service->update();
-		ui_service->update();
+		
 		time_service->update();
 
 		if (Main::GameService::getGameState() == Main::GameState::GAMEPLAY)
 		{
 			level_service->update();
 			element_service->update();
-			food_service->update();
 			player_service->update();
+			food_service->update();
 		}
+
+		ui_service->update();
 	}
 
 	void ServiceLocator::render()
 	{
-		ui_service->render();
+		
 		graphic_service->render();
 
 		if (Main::GameService::getGameState() == Main::GameState::GAMEPLAY)
 		{
 			level_service->render();	
 			element_service->render();
-			food_service->render();
 			player_service->render();
+			food_service->render();
 		}
+
+		ui_service->render();
+
 	}
 
 	void ServiceLocator::clearAllServices()
@@ -89,10 +94,10 @@ namespace Global
 		delete(sound_service);
 		delete(event_service);
 		delete(time_service);
-		delete(food_service);
 		delete(level_service);
 		delete(player_service);
 		delete(element_service);
+		delete(food_service);
 	}
 
 	ServiceLocator* ServiceLocator::getInstance()

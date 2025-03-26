@@ -2,9 +2,12 @@
 #include <Graphics/GraphicService.h>
 #include "./Player/Direction.h"
 #include "../LinkedList/SingleLinkedList.h"
+#include "../../include/Food/FoodType.h"
 
 namespace Player
 {
+	using namespace Food;
+
 	enum class InputState
 	{
 		WAITING,
@@ -15,6 +18,26 @@ namespace Player
 	{
 		ALIVE,
 		DEAD
+	};
+
+	enum class TimeComplexity
+	{
+		NONE,
+		ONE,
+		N,
+	};
+
+	enum class LinkedListOperations
+	{
+		NONE,
+		INSERT_AT_HEAD,
+		INSERT_AT_TAIL,
+		INSERT_AT_MID,
+		REMOVE_AT_HEAD,
+		REMOVE_AT_TAIL,
+		REMOVE_AT_MID,
+		DELETE_HALF_LIST,
+		REVERSE_LIST,
 	};
 
 	class SnakeController
@@ -32,6 +55,10 @@ namespace Player
 		float restart_counter = 0.f;
 		InputState current_input_state;
 		Direction current_snake_direction;
+		TimeComplexity time_complexity;
+		LinkedListOperations last_linked_list_operation;
+
+		int player_score;
 
 		void createLinkedList();
 		void delayedUpdate();
@@ -50,10 +77,18 @@ namespace Player
 		void updateSnakeDirection();
 		void moveSnake();
 		void processSnakeCollision();
+		void processBodyCollisions();
+		void processElementCollisions();
+		void processFoodCollision();
+		void OnFoodCollected(FoodType food_type);
 		void handleRestart();
 		void reset();
 		void respawnSnake();
 		void setSnakeState(SnakeState state);
+
+		LinkedListOperations getLinkedListOperation();
+		TimeComplexity getTimeComplexity();
+		int getPlayerScore();
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 
 		SnakeState getSnakeState();
