@@ -33,9 +33,15 @@ namespace Player
 		snake_controller->render();
 	}
 
-	void PlayerService::spawnPlayer()
+	void PlayerService::spawnPlayer(Level::LinkedListType level_type)
 	{
+		snake_controller->createLinkedList(level_type);
 		snake_controller->spawnSnake();
+	}
+
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
 	}
 
 	void PlayerService::destroy()
