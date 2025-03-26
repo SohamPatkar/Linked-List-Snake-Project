@@ -1,3 +1,5 @@
+# Snake Game using Linked List
+
 Snake Game (Linked List Implementation) – C++ & SFML
 Description:
 A modern take on the classic Snake game using C++ and SFML, featuring linked list-based snake movement with unique mechanics.
