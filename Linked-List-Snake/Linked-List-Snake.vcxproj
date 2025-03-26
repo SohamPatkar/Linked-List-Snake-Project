@@ -133,10 +133,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\UI\LevelSelection\LevelSelectionUIController.h">
+      <FileType>CppHeader</FileType>
+    </ClInclude>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
     <ClCompile Include="source\UI\Credits\CreditsScreenUIController.cpp" />
     <ClCompile Include="source\UI\Instructions\InstructionsScreenUIController.cpp" />
+    <ClCompile Include="source\UI\LevelSelection\LevelSelectionUIController.cpp" />
     <ClCompile Include="source\UI\UIElement\AnimatedImageView.cpp" />
     <ClCompile Include="source\UI\UIElement\ButtonView.cpp" />
     <ClCompile Include="source\Global\Config.cpp" />
@@ -148,11 +152,18 @@
     <ClCompile Include="source\Global\ServiceLocator.cpp" />
     <ClCompile Include="source\Sound\SoundService.cpp" />
     <ClCompile Include="source\UI\SplashScreen\SplashScreenUIController.cpp" />
+    <ClCompile Include="source\UI\UIElement\RectangleShapeView.cpp" />
     <ClCompile Include="source\UI\UIElement\TextView.cpp" />
     <ClCompile Include="source\UI\UIService.cpp" />
     <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Level\LevelController.h" />
+    <ClInclude Include="include\Level\LevelData.h" />
+    <ClInclude Include="include\Level\LevelModel.h" />
+    <ClInclude Include="include\Level\LevelNumber.h" />
+    <ClInclude Include="include\Level\LevelService.h" />
+    <ClInclude Include="include\Level\LevelView.h" />
     <ClInclude Include="include\Time\TimeService.h" />
     <ClInclude Include="include\UI\Credits\CreditsScreenUIController.h" />
     <ClInclude Include="include\UI\Instructions\InstructionsScreenUIController.h" />
@@ -168,9 +179,26 @@
     <ClInclude Include="include\Global\ServiceLocator.h" />
     <ClInclude Include="include\Sound\SoundService.h" />
     <ClInclude Include="include\UI\SplashScreen\SplashScreenUIController.h" />
+    <ClInclude Include="include\UI\UIElement\RectangleShapeView.h" />
     <ClInclude Include="include\UI\UIElement\TextView.h" />
     <ClInclude Include="include\UI\UIService.h" />
     <ClInclude Include="include\UI\UIElement\UIView.h" />
+    <ClCompile Include="source\Level\LevelController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>CppCode</FileType>
+    </ClCompile>
+    <ClCompile Include="source\Level\LevelModel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>CppCode</FileType>
+    </ClCompile>
+    <ClCompile Include="source\Level\LevelService.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>CppCode</FileType>
+    </ClCompile>
+    <ClCompile Include="source\Level\LevelView.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>CppCode</FileType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
